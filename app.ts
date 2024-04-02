@@ -1,0 +1,26 @@
+import inquirer from "inquirer";
+let todos:string[]=[];
+let condition=true;
+
+while(condition)
+{
+    let todoQuestions= await inquirer.prompt(
+    [
+{
+      name:"firstQuestion",
+      type:"input",
+      message:"What would you like to add more in you todos?"
+},
+{
+    name:`secondQuestion`,
+    type:"confirm",
+    message:`would you like to add morein your todos?`,
+    default:"true"
+
+}
+]
+);
+todos.push(todoQuestions.firstQuestion);
+console.log(todos)
+condition= todoQuestions.secondQuestion;
+};
